@@ -6,7 +6,6 @@ import scala.concurrent.{Await, ExecutionContext, Future}
 
 object Main {
   def main(args: Array[String]): Unit = {
-    //val actorSystem = ActorSystem.create("BankActorSystem")
     val threadPool = Executors.newFixedThreadPool(8)
     implicit val ec: ExecutionContext = ExecutionContext.fromExecutor(threadPool)
 

@@ -1,7 +1,7 @@
 package com.springer.nemo
 
 abstract class Bank {
-  protected val accounts: Seq[BankAccount] = 1.to(25).map(id => new BankAccount(id, 500))
+  private val accounts: Seq[BankAccount] = 1.to(25).map(id => new BankAccount(id, 500))
 
   def transfer(fromId: Int, toId: Int, amount: Int): Unit
 

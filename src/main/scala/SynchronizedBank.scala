@@ -1,5 +1,4 @@
 package com.springer.nemo
-import scala.util.Random
 
 class SynchronizedBank extends Bank {
   def transfer(fromId: Int, toId: Int, amount: Int): Unit = {
@@ -18,5 +17,4 @@ class SynchronizedBank extends Bank {
       }
     }
   }
-
 }
