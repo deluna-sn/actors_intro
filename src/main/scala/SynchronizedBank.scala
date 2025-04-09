@@ -1,4 +1,5 @@
 class SynchronizedBank extends Bank {
+  // def transfer(fromId: Int, toId: Int, amount: Int): Unit = synchronized { // Alternative fix to deadlock ?
   def transfer(fromId: Int, toId: Int, amount: Int): Unit = {
     val fromAccount = getAccount(fromId)
     val toAccount = getAccount(toId)
