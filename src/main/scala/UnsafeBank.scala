@@ -1,5 +1,3 @@
-package com.springer.nemo
-
 class UnsafeBank extends Bank {
   def transfer(fromId: Int, toId: Int, amount: Int): Unit = {
     val fromAccount = getAccount(fromId)

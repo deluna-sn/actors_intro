@@ -1,5 +1,3 @@
-package com.springer.nemo
-
 class SynchronizedBank extends Bank {
   def transfer(fromId: Int, toId: Int, amount: Int): Unit = {
     val fromAccount = getAccount(fromId)
@@ -8,9 +6,12 @@ class SynchronizedBank extends Bank {
     if (fromAccount.balance < amount)
       throw new RuntimeException("Insufficient funds in account.")
 
+    // val accounts = List(fromAccount, toAccount).sortBy(_.id) // Fixing the deadlock
+
+    // accounts.head.synchronized { // Fixing the deadlock
     fromAccount.synchronized {
-      // This line enables a deadlock
-      // Thread.sleep(50)
+      // Thread.sleep(50) // This line enables a deadlock
+      // accounts.last.synchronized { // Fixing the deadlock
       toAccount.synchronized {
         fromAccount.balance -= amount
         toAccount.balance += amount

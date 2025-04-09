@@ -1,5 +1,3 @@
-package com.springer.nemo
-
 import java.util.concurrent.Executors
 import scala.concurrent.duration.DurationInt
 import scala.concurrent.{Await, ExecutionContext, Future}

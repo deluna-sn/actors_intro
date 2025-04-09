@@ -1,5 +1,3 @@
-package com.springer.nemo
-
 abstract class Bank {
   private val accounts: Seq[BankAccount] = 1.to(25).map(id => new BankAccount(id, 500))
 
